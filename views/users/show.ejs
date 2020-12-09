@@ -1,17 +1,10 @@
 <%- include('../partials/header') %>
-<h2>All Pets</h2>
+<h2><%= user.name %>'s Pets</h2>
 <h3>------------------------------</h3>
-
 <% pets.forEach((pet) => { %>
   <h2>Name: <a href="/pets/<%= pet._id %>"><%= pet.name %></h2></a>
   <h3>Type: <%= pet.type %></h3>
-  <h3>Owner: <%= pet.owner.name %></h3>
-  <% if(pet.owner._id.equals(user._id)) { %>
-    <form action="/pets/<%= pet._id %>?_method=DELETE" method="POST">
-      <button type="submit">Delete 🐡</button>
-    </form>
-  <% } %>
   <h3>------------------------------</h3>
-  <% }) %>
+<% }) %>
 
 <%- include('../partials/footer') %>
