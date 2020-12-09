@@ -57,8 +57,6 @@ function deletePet(req, res) {
 
 // Find the pet by ._id (being passed in via req.params) and update it
 function update(req, res) {
-  // Assign the _id of the current logged in user to req.body.owner BEFORE updating
-  req.body.owner = req.user._id
   // findByIdAndUpdate requires 3 arguments (the thing to update, what to update it with, and {new: true})
   Pet.findByIdAndUpdate(req.params.id, req.body, {new: true})
   .then((pet) => {
