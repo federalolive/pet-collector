@@ -1,11 +1,14 @@
 <%- include('../partials/header') %>
 <h2>All Pets</h2>
 <h3>------------------------------</h3>
-
+<!-- A forEach loop to display all the pets -->
 <% pets.forEach((pet) => { %>
+  <!-- Added a clickable link for the name of each pet -->
+  <!-- The links result in a GET request to /pets/:id -->
   <h2>Name: <a href="/pets/<%= pet._id %>"><%= pet.name %></h2></a>
   <h3>Type: <%= pet.type %></h3>
   <h3>Owner: <%= pet.owner.name %></h3>
+  <!-- Only display the delete button if the pet belongs to the logged in user -->
   <% if(pet.owner._id.equals(user._id)) { %>
     <form action="/pets/<%= pet._id %>?_method=DELETE" method="POST">
       <button type="submit">Delete 🐡</button>

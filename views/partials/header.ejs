@@ -8,6 +8,7 @@
   <body>
     <nav>
       <ul>
+        <!-- If the user is logged in, they'll see these elements -->
         <% if (user) { %>
         <li>
           <a href="/auth/logout">Log Out</a>
@@ -24,6 +25,7 @@
         <li>
           <a href="/users">User List</a>
         </li>
+        <!-- If the user is NOT logged in, they'll see these elements -->
         <% } else { %>
         <li>
           <a href="/auth/google">Login with Google</a>

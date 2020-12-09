@@ -13,7 +13,9 @@ const petSchema = new Schema(
     name: String,
     type: String,
     age: Number,
+    // Comments are embedded within each pet
     comments: [commentSchema],
+    // The owner is referenced within each pet
     owner: {type: Schema.Types.ObjectId, ref: 'User'}
   },
   {

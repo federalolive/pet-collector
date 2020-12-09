@@ -4,6 +4,7 @@ const petsCtrl = require('../controllers/pets')
 
 router.get('/', isLoggedIn, petsCtrl.index)
 router.get('/new', isLoggedIn, petsCtrl.new)
+// No convention for this route, so I used a name that makes sense
 router.get('/mine', isLoggedIn, petsCtrl.indexMine)
 router.get('/:id', isLoggedIn, petsCtrl.show)
 router.get('/:id/edit', isLoggedIn, petsCtrl.edit)

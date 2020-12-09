@@ -4,15 +4,18 @@
 <h3>Type: <%= pet.type %></h3>
 <h3>Owner: <%= pet.owner.name %></h3>
 <h3>Age: <%= pet.age %></h3>
+<!-- Only display a link to edit a pet if it belongs to the logged in user -->
 <% if(pet.owner._id.equals(user._id)) { %>
   <a href="/pets/<%= pet._id %>/edit">Edit <%= pet.name %></a>
 <% } %>
 <h3>------------------------------</h3>
 <h2>Comments:</h2>
+<!-- Form for adding a comment via POST request to /pets/:id/comments -->
 <form action="/pets/<%= pet._id %>/comments" method="POST">
   <input type="text" name="comment">
   <button type="submit">Add Comment 🦘</button>
 </form>
+<!-- A forEach loop to display each comment and the user that posted it -->
 <% pet.comments.forEach((c) => { %>
   <h4><%= c.comment %> - <%= c.postedBy %></h4>
 <% }) %> 
