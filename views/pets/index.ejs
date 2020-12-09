@@ -6,7 +6,7 @@
   <h3>Owner: <%= pet.owner.name %></h3>
   <% if( pet.owner._id.equals(user._id)) { %>
     <form action="/pets/<%= pet._id %>?_method=DELETE" method="POST">
-      <button type="submit">Delete</button>
+      <button type="submit">Delete 🐡</button>
     </form>
   <% } %>
   <h3>------------------------------</h3>
