@@ -1,5 +1,4 @@
 const router = require("express").Router()
-const pets = require("../controllers/pets")
 const petsCtrl = require('../controllers/pets')
 
 router.get('/', isLoggedIn, petsCtrl.index)

@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 <h2>Edit Pet</h2>
-<!-- Form for submitting a PUT request to /pets/:id tot update a pet -->
+<!-- Form for submitting a PUT request to /pets/:id to update a pet -->
 <form action="/pets/<%= pet._id %>?_method=PUT" method="POST">
   <input type="text" name="name" placeholder="Pet Name" value="<%=pet.name%>"><br>
   <input type="text" name="type" placeholder="Pet Type" value="<%=pet.type%>"><br>
