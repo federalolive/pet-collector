@@ -1,8 +1,10 @@
 const router = require("express").Router()
+const pets = require("../controllers/pets")
 const petsCtrl = require('../controllers/pets')
 
 router.get('/', isLoggedIn, petsCtrl.index)
 router.get('/new', isLoggedIn, petsCtrl.new)
+router.get('/mine', isLoggedIn, petsCtrl.indexMine)
 router.get('/:id', isLoggedIn, petsCtrl.show)
 router.get('/:id/edit', isLoggedIn, petsCtrl.edit)
 router.post('/', isLoggedIn, petsCtrl.create)

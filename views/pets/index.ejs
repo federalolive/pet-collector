@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 <h2>All Pets</h2>
 <% pets.forEach((pet) => { %>
-  <a href="/pets/<%= pet._id %>"><h2>Name: <%= pet.name %></h2></a>
+  <h2>Name: <a href="/pets/<%= pet._id %>"><%= pet.name %></h2></a>
   <h3>Type: <%= pet.type %></h3>
   <h3>Owner: <%= pet.owner.name %></h3>
   <% if(pet.owner._id.equals(user._id)) { %>
