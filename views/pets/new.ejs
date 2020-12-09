@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+<h2>New Pet</h2>
+<form action="/pets" method="POST">
+<input type="text" name="name" placeholder="Pet Name"><br>
+<input type="text" name="type" placeholder="Pet Type"><br>
+<input type="number" name="age" placeholder="Pet Age"><br>
+<button type="submit">Add Pet 🎠</button>
+</form>
+<%- include('../partials/footer') %>

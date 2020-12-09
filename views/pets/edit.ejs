@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+<h2>Edit Pet</h2>
+<form action="/pets/<%= pet._id %>?_method=PUT" method="POST">
+  <input type="text" name="name" placeholder="Pet Name" value="<%=pet.name%>"><br>
+  <input type="text" name="type" placeholder="Pet Type" value="<%=pet.type%>"><br>
+  <input type="number" name="age" placeholder="Pet Age" value="<%=pet.age%>"><br>
+  <button type="submit">Save Pet 🦄</button>
+</form>
+<%- include('../partials/footer') %>

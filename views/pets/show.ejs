@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+<h2><%= pet.name %>'s Details</h2>
+<h2>Name: <%= pet.name %></h2>
+<h3>Type: <%= pet.type %></h3>
+<h3>Owner: <%= pet.owner.name %></h3>
+<h3>Age: <%= pet.age %></h3>
+<a href="/pets/<%= pet._id %>/edit">Edit <%= pet.name %></a>
+<h2>Comments:</h2>
+<!-- This is where the comments go -->
+<form action="/pets/<%= pet._id %>/comments" method="POST">
+  <input type="text" name="comment">
+  <button type="submit">Add Comment 🦘</button>
+</form>
+<% pet.comments.forEach((c) => { %>
+  <h4><%= c.comment %> - <%= c.postedBy %></h4>
+<% }) %> 
+<%- include('../partials/footer') %>
